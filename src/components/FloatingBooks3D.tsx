@@ -16,19 +16,19 @@ const BookMesh = ({
   speed?: number;
   floatIntensity?: number;
 }) => {
-  const meshRef = useRef<THREE.Mesh>(null);
+  const groupRef = useRef<THREE.Group>(null);
 
   useFrame((state) => {
-    if (!meshRef.current) return;
-    meshRef.current.rotation.y =
+    if (!groupRef.current) return;
+    groupRef.current.rotation.y =
       rotation[1] + Math.sin(state.clock.elapsedTime * speed * 0.3) * 0.15;
-    meshRef.current.rotation.x =
+    groupRef.current.rotation.x =
       rotation[0] + Math.cos(state.clock.elapsedTime * speed * 0.2) * 0.08;
   });
 
   return (
     <Float speed={speed} rotationIntensity={0.3} floatIntensity={floatIntensity}>
-      <group ref={meshRef} position={position} rotation={rotation}>
+      <group ref={groupRef} position={position} rotation={rotation}>
         {/* Book body */}
         <RoundedBox args={[1, 1.4, 0.15]} radius={0.03} smoothness={4}>
           <meshStandardMaterial color={color} roughness={0.3} metalness={0.1} />
