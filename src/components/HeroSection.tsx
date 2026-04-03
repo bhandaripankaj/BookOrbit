@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
+import { lazy, Suspense } from "react";
 import heroImg from "@/assets/hero-books.jpg";
+
+const FloatingBooks3D = lazy(() => import("./FloatingBooks3D"));
 
 const HeroSection = () => {
   return (
@@ -17,6 +20,11 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background/50" />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
       </div>
+
+      {/* 3D Floating Books */}
+      <Suspense fallback={null}>
+        <FloatingBooks3D />
+      </Suspense>
 
       {/* Ambient light blobs */}
       <div className="absolute top-1/3 right-1/5 w-[500px] h-[500px] bg-primary/8 rounded-full blur-[120px]" />

@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import Marquee from "@/components/Marquee";
@@ -7,17 +8,24 @@ import Categories from "@/components/Categories";
 import CallToAction from "@/components/CallToAction";
 import Footer from "@/components/Footer";
 
+const ParticleField = lazy(() => import("@/components/ParticleField"));
+
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
-      <HeroSection />
-      <Marquee />
-      <TrendingBooks />
-      <EditorsPicks />
-      <Categories />
-      <CallToAction />
-      <Footer />
+    <div className="min-h-screen bg-background relative">
+      <Suspense fallback={null}>
+        <ParticleField />
+      </Suspense>
+      <div className="relative z-10">
+        <Navbar />
+        <HeroSection />
+        <Marquee />
+        <TrendingBooks />
+        <EditorsPicks />
+        <Categories />
+        <CallToAction />
+        <Footer />
+      </div>
     </div>
   );
 };
