@@ -21,6 +21,11 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
       </div>
 
+      {/* 3D Floating Books */}
+      <Suspense fallback={null}>
+        <FloatingBooks3D />
+      </Suspense>
+
       {/* Ambient light blobs */}
       <div className="absolute top-1/3 right-1/5 w-[500px] h-[500px] bg-primary/8 rounded-full blur-[120px]" />
       <div className="absolute bottom-1/4 left-1/4 w-[300px] h-[300px] bg-accent/8 rounded-full blur-[100px]" />
