@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
+import { lazy, Suspense } from "react";
 import heroImg from "@/assets/hero-books.jpg";
+
+const FloatingBooks3D = lazy(() => import("./FloatingBooks3D"));
 
 const HeroSection = () => {
   return (
