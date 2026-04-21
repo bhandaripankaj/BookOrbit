@@ -1,3 +1,2 @@
-# Welcome to your Lovable project
-
-TODO: Document your project here
+# BookOrbit
+BookOrbit is a visually stunning and interactive online bookstore where authors can publish their books and users can explore, discover, and purchase them seamlessly.
