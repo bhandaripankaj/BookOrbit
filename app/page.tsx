@@ -1,3 +1,5 @@
+"use client";
+
 import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
@@ -10,7 +12,7 @@ import Footer from "@/components/Footer";
 
 const ParticleField = lazy(() => import("@/components/ParticleField"));
 
-const Index = () => {
+export default function HomePage() {
   return (
     <div className="min-h-screen bg-background relative">
       <Suspense fallback={null}>
@@ -28,6 +30,4 @@ const Index = () => {
       </div>
     </div>
   );
-};
-
-export default Index;
+}

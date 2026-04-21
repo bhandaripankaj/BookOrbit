@@ -11,7 +11,7 @@ const HeroSection = () => {
       {/* Background with editorial grain */}
       <div className="absolute inset-0">
         <img
-          src={heroImg}
+          src={heroImg.src}
           alt="Floating books"
           width={1920}
           height={1080}
